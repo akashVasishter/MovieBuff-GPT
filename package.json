@@ -1,0 +1,35 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "netflix-GPT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest",
+    "watch-test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashVasishter/Netflix-GPT.git"
+  },
+  "author": "Vasishter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akashVasishter/Netflix-GPT/issues"
+  },
+  "homepage": "https://github.com/akashVasishter/Netflix-GPT#readme",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "parcel": "2.15.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  },
+  "browserList": [
+    "last 2 versions"
+  ]
+}
