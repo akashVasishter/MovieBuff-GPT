@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import {auth} from "../utils/firebase";
 import { useNavigate } from "react-router";
 import Header from "./Header";
+import { NETFLIX_BG_IMG, USER_AVATAR } from "../utils/constants";
 
 // This component handles user login and registration
 const Login = () => { 
@@ -11,15 +12,13 @@ const Login = () => {
     const[isSignIn, setSignIn] = useState(true);
     const[errorMsg, setErrorMsg] = useState("");
     const navigate = useNavigate();
-
     const name = useRef(null);
     const email = useRef(null);
     const password = useRef(null);
-    const toggleSignIn = () => {
-      
+   
+    const toggleSignIn = () => {    
         // Toggle between Sign In and Sign Up
         setSignIn(!isSignIn);
-
     }
 
     const validateHandler = () => {
@@ -39,7 +38,7 @@ const Login = () => {
 
 
       updateProfile(user, {
-  displayName: name.current.value, photoURL: "https://lh3.googleusercontent.com/ogw/AF2bZyiPdhqmiWGKyg_dHUf95_OvSXkr6w7mP8KjA2DePnfjE4tM=s64-c-mo"
+  displayName: name.current.value, photoURL: {USER_AVATAR}
 }).then(() => {
   // Profile updated!
   // ...
@@ -54,10 +53,9 @@ const Login = () => {
     const errorCode = error.code;
     const errorMessage = error.message;
     setErrorMsg(errorCode +"-"+ errorMessage);
-  });
-         
-       }
-        else {
+  });      
+     }
+      else {
             //SignIn Logic
     signInWithEmailAndPassword(auth, email.current.value, password.current.value)
   .then((userCredential) => {
@@ -77,7 +75,7 @@ const Login = () => {
         <div>
         <Header/>
         <div className="absolute">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/8200f588-2e93-4c95-8eab-ebba17821657/web/IN-en-20250616-TRIFECTA-perspective_9cbc87b2-d9bb-4fa8-9f8f-a4fe8fc72545_medium.jpg"
+        <img src={NETFLIX_BG_IMG}
         alt="netflix-bg-img"/>
         </div>
         <form onClick={(e) => e.preventDefault()} className="w-3/12 absolute p-12 bg-black my-24 mx-auto right-0 left-0 text-white bg-opacity-80 rounded-lg">

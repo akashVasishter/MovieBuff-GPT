@@ -1,0 +1,31 @@
+import { useEffect } from "react";
+import { API_OPTIONS } from "../utils/constants";
+import { useDispatch} from "react-redux";
+import { addNowPlayingTrailer } from "../utils/movieSlice";
+
+
+const useNowPlayingTrailer = (videoId) => {
+
+    //fetching movies and Displaying Movies 
+
+      const dispatch = useDispatch();
+      const fetchTrailer = async () => {
+        
+        const data = await fetch("https://api.themoviedb.org/3/movie/"+videoId+"/videos?language=en-US", API_OPTIONS)
+        const json = await data.json();
+        console.log(json);
+
+        const filterData = json.results.filter((data) => data.type === "Trailer");
+        const trailerData = filterData.length ? filterData[0] : json.results[0];
+        console.log(trailerData);
+        //if you assign directly trailerKey value in the embed url it will give undefined error assign it to a state or fetch from store
+        dispatch(addNowPlayingTrailer(trailerData));
+      }
+    
+       useEffect(() => {
+        fetchTrailer();   
+    },[])
+};
+    
+   
+    export default useNowPlayingTrailer;
