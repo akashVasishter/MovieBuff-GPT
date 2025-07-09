@@ -17,8 +17,7 @@ const {id,original_title,overview} = mainMovie;
     return(
      <div>
         <VideoTitle title={original_title} overview={overview}/>
-        <VideoBackground videoId = {id}/>
-        
+        <VideoBackground videoId = {id}/>  
      </div>
     )
 };
