@@ -34,6 +34,10 @@ Built Movie Card
 TMDB Image CDN URL
 Made the Browse page amazing like netflix UI with tailwindCSS
 Custom hooks for All movie cards
+GPT search page(GPT Component)
+GPT search bar
+Multi-language feature for gpt search bar placeholder and search button(eng,hindi,spanish)
+
 
 
 # Features

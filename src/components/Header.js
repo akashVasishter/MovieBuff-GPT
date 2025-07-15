@@ -5,13 +5,24 @@ import { onAuthStateChanged,signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useDispatch, useSelector} from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { NETFLIX_LOGO } from "../utils/constants";
+import { NETFLIX_LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
+import { toggleGptView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 const user = useSelector(store => store.user);
+const showGptSearch = useSelector( store => store.gpt.showGptView);
+
+const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {
+        navigate("/error");
+      });
+  };
 
     useEffect(() => {
 
@@ -34,23 +45,35 @@ const user = useSelector(store => store.user);
 return () => unsubscribe();
 },[]);
 
-const signoutHandler = () => {
-    signOut(auth).then(() => {
-  // Sign-out successful.
 
-}).catch((error) => {
-  // An error happened.
-});
-    }
+   const handleGptView = () => {
+
+    dispatch(toggleGptView());
+
+   }
+
+   const langHandler = (e) => {
+    
+          dispatch(changeLanguage(e.target.value));
+   }
+
     return(
         <div className="absolute w-full px-8 py-4 bg-gradient-to-b from-black z-10 flex justify-between">
          <img className="w-44 cursor-pointer" src={NETFLIX_LOGO}
          alt="logo"/>
        
-       <div className="flex">
+      {user && ( 
+        <div className="flex">
+         {
+           showGptSearch && <select className="p-2 bg-gray-500 text-white" onChange={langHandler}>
+          {SUPPORTED_LANGUAGES.map((lang) => ( <option key={lang.identifier} value={lang.identifier}>{lang.name}</option> ))}  
+          </select>
+         } 
+        <button onClick={handleGptView} className="px-4 py-2 mx-4 my-2 bg-purple-800 text-white rounded-lg">{ showGptSearch ? "Homepage" : "GPT Search"}</button>
          <img src={user?.photoURL} alt="profile" className="w-12 h-12 rounded-full"/>
-         <button onClick={signoutHandler} className="bg-red-500 p-4 cursor-pointer">SignOut</button>
+         <button onClick={handleSignOut} className="bg-red-500 p-4 cursor-pointer">SignOut</button>
         </div>
+        )}
         </div>
     )
 }
