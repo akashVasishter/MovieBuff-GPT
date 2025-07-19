@@ -6,9 +6,10 @@ export const API_OPTIONS =  {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiN2U1ZjdkNmJhNWNjMzExYmY5YTBkN2ExNzZlMTBmZiIsIm5iZiI6MTc1MTUzNzkxNS44MDksInN1YiI6IjY4NjY1OGZiMzY5ZDkyZjQ4NjMxZjlkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0s2noBlJ2UeZCGSs23ZxXXmnqURePUEIH6Tx2dm8qqs'
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiN2U1ZjdkNmJhNWNjMzExYmY5YTBkN2ExNzZlMTBmZiIsIm5iZiI6MTc1MTUzNzkxNS44MDksInN1YiI6IjY4NjY1OGZiMzY5ZDkyZjQ4NjMxZjlkNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0s2noBlJ2UeZCGSs23ZxXXmnqURePUEIH6Tx2dm8qqs',
   }
 };
+
 
 export const IMG_CDN = "https://image.tmdb.org/t/p/w500/";
 
@@ -19,3 +20,5 @@ export const SUPPORTED_LANGUAGES = [
   {"identifier":"spanish", "name":"Spanish"}
 ];
 
+
+export const GEMINI_API_Key = process.env.REACT_APP_GEMINI_API_KEY; 
