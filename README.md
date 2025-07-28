@@ -37,6 +37,15 @@ Custom hooks for All movie cards
 GPT search page(GPT Component)
 GPT search bar
 Multi-language feature for gpt search bar placeholder and search button(eng,hindi,spanish)
+Get GemAI key
+Gpt search API call 
+fetch movieSuggestion from TMDB
+created gpt slice added data
+Reused movie List component to make movie suggestion container
+Memoization when loading homepage for all custom hooks while fetch movies
+Added .env file and encrypted api key 
+Addidng .env file to gitignore
+Made our site Responsive
 
 
 

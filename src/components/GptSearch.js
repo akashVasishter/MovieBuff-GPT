@@ -3,16 +3,17 @@ import { NETFLIX_BG_IMG } from "../utils/constants";
 import GptSuggestions from "./GptSuggestions";
 
 const GptSearch = () => {
-
-    return(
-        <div>
+    return (
+        <>
         <div className="fixed -z-10">
-        <img src={NETFLIX_BG_IMG} alt="Netflix bg_IMG"/>    
+        <img src={NETFLIX_BG_IMG} alt="Netflix-BG_IMG"/>
         </div>
+        <div className="">
         <GptSearchBar/>
         <GptSuggestions/>
         </div>
-    )
+        </>  
+    );
 };
 
 

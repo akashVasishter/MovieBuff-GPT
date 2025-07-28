@@ -58,20 +58,19 @@ return () => unsubscribe();
    }
 
     return(
-        <div className="absolute w-full px-8 py-4 bg-gradient-to-b from-black z-10 flex justify-between">
-         <img className="w-44 cursor-pointer" src={NETFLIX_LOGO}
+        <div className="absolute w-full px-8 py-4 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+         <img className="w-44 mx-auto md:mx-0 cursor-pointer" src={NETFLIX_LOGO}
          alt="logo"/>
        
       {user && ( 
-        <div className="flex">
+        <div className="flex justify-between ">
          {
-           showGptSearch && <select className="p-2 bg-gray-500 text-white" onChange={langHandler}>
+           showGptSearch && <select className="px-4 py-2 mx-4 my-2 bg-gray-500 text-white" onChange={langHandler}>
           {SUPPORTED_LANGUAGES.map((lang) => ( <option key={lang.identifier} value={lang.identifier}>{lang.name}</option> ))}  
           </select>
          } 
         <button onClick={handleGptView} className="px-4 py-2 mx-4 my-2 bg-purple-800 text-white rounded-lg">{ showGptSearch ? "Homepage" : "GPT Search"}</button>
-         <img src={user?.photoURL} alt="profile" className="w-12 h-12 rounded-full"/>
-         <button onClick={handleSignOut} className="bg-red-500 p-4 cursor-pointer">SignOut</button>
+         <button onClick={handleSignOut} className="bg-red-500 px-4 py-2 mx-4 my-2 cursor-pointer">SignOut</button>
         </div>
         )}
         </div>
