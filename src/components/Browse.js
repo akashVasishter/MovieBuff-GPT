@@ -3,10 +3,10 @@ import { useSelector } from "react-redux";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
-import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
-import usePopularMovies from "../hooks/usePopularMovies";
-import useTopRatedMovies from "../hooks/useTopRatedMovies";
-import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies.js";
+import usePopularMovies from "../hooks/usePopularMovies.js";
+import useTopRatedMovies from "../hooks/useTopRatedMovies.js";
+import useUpcomingMovies from "../hooks/useUpcomingMovies.js";
 import GptSearch from "./GptSearch";
 
 

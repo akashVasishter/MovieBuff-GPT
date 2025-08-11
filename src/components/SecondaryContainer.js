@@ -5,7 +5,6 @@ import MovieList from "./MovieList";
 const SecondaryContainer = () => {
 
     const movies = useSelector(store => store.movies);
-    console.log(movies);
 
     //movies.nowPlayingMovies check to avoid errors as the redux store takes some time to update and fetch with selector it might give type error null or undefined
     return(

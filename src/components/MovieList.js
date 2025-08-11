@@ -3,7 +3,6 @@ import { Link } from "react-router";
 
 const MovieList = ({movies,title}) => {
 
-    console.log(movies);
 
 //we are using this check after return because it takes some time to update and retrieve from the store so movies?.length can get type error null or undefined
     return( movies?.length && (

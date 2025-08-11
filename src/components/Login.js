@@ -24,7 +24,6 @@ const Login = () => {
     const validateHandler = () => {
 
         const message = validateCredentials(email.current.value, password.current.value);
-        console.log(message);
         setErrorMsg(message);
         if(message) return;
 
@@ -34,7 +33,6 @@ const Login = () => {
        .then((userCredential) => {
     // Signed up 
       const user = userCredential.user;
-      console.log(user);
 
 
       updateProfile(user, {
@@ -61,7 +59,6 @@ const Login = () => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user);
     // ...
   })
   .catch((error) => {

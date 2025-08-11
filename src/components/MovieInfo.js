@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { useParams } from "react-router";
-import useMovieInfo from "../hooks/useMovieInfo";
+import useMovieInfo from "../hooks/useMovieInfo.js";
 import { useSelector } from "react-redux";
 import { IMG_CDN } from "../utils/constants";
 import VideoTitle from "./VideoTitle";

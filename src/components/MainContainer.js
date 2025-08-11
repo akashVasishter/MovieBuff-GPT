@@ -8,7 +8,6 @@ const MainContainer = () => {
    if(!movies) return;
     
     const mainMovie = movies[0];
-    console.log(mainMovie);
 //consoling the mainMovie this will crash because the store wont be updated yet it will be in null state 
 //handle it with early return like above so that it wont go ahead
 
